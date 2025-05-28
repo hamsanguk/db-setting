@@ -12,9 +12,12 @@ export class UserRepository {
   ) {}
 
   async findOne(userId: string): Promise<User | undefined> {
-    const user = await this.userRepository.findOne({ where: { userId } });
+    const user = await this.userRepository.findOne({ where: { userId } });  
     return user ?? undefined;
   }
+  
+
+  
 
   async findAll(): Promise<User[]> {
     return this.userRepository.find();
